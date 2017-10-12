@@ -1,0 +1,39 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/hogan-2.0.0.min.js"></script>
+<script src="/js/search.js"></script>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <a class="brand" href="#">PrTwSearch</a>
+    <ul class="nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/account">Account</a></li>
+    <li class="active"><a href="/search">Search</a></li>
+    <li><a href="/listlist">List/list</a></li>
+    <li><a href="/list">List/status</a></li>
+    <li><a href="logout">Log Out</a></li>
+    </ul>
+    </div>
+    </div>
+    
+<form class="form-search" action="/search">
+<input type="text" id="keyword" name="keyword" value="<%= keyword %>">
+<label>since:<input type="text" id="sinceYmd" name="sinceYmd" value=""></label>
+<label>until:<input type="text" id="untilYmd" name="untilYmd" value=""></label>
+
+<button id="searchBtn" class="btn">search</button>
+</form>
+
+<div id="out"></div>
+
+<!-- 以下はHogan.jsのテンプレート -->
+<script type="text/template" id="tmpl">
+    <ul>
+        {{#statuses}}
+            <li>{{#user}}{{screen_name}}{{/user}} : {{text}}</li>
+            {{#entities}}{{#urls}}<dd>{{expanded_url}}</dd>{{/urls}}{{/entities}}
+        {{/statuses}}
+    </ul>
+</script>
+

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+    <body>
+    aaa
+        <script>
+        $(function(){
+            $.ajax({url:"/search"
+            ,type: 'POST'
+            ,data : {keyword:"babu0131"}
+            }).done(function(data){
+    alert('success!!');
+    console.dir(data);
+}).fail(function(data){
+    alert('error!!!');
+});
+
+});
+
+
+        </script>
+    
+    </body>
+    
+</html>

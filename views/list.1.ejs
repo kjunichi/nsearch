@@ -1,0 +1,41 @@
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <a class="brand" href="#">PrTwSearch</a>
+    <ul class="nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/account">Account</a></li>
+    <li><a href="/search">Search</a></li>
+    <li><a href="/listlist">List/list</a></li>
+    <li class="active"><a href="/list">List/status</a></li>
+    <li><a href="logout">Log Out</a></li>
+    </ul>
+    </div>
+    </div>
+    
+<form id="listfrm" class="form-search" action="/list">
+<input type="text" class="input-medium search-query" name="listid" value="<%= listid %>">
+<button id="Btn" class="btn">dummy</button>
+<button id="updateListBtn" class="btn">search</button>
+
+</form>
+
+<ul>
+<% for(var i=0; i < result.length; i++) {%>
+   <li>
+   <%= result[i].user.screen_name %> : <%= result[i].text %>
+   <%
+    if(result[i].entities) {
+      if(result[i].entities.urls) {
+        for(var j=0; j<result[i].entities.urls.length;j++) {
+   %>
+          <%= result[i].entities.urls[j].expanded_url %>     
+   <%
+        }
+      }
+    }
+    %>
+   </li>
+<% } %>
+</ul>
+<script src="/js/list.js"></script>

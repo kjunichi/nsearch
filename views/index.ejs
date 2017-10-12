@@ -1,0 +1,29 @@
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <a class="brand" href="#">PrTwSearch</a>
+    <ul class="nav">
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="/account">Account</a></li>
+    <li><a href="/search">Search</a></li>
+    <li><a href="/listlist">List/list</a></li>
+    <li><a href="/list">List/status</a></li>
+    <li><a href="logout">Log Out</a></li>
+    </ul>
+    </div>
+    </div>
+    
+<% if (!user) { %>
+<h2>Welcome! Please log in.</h2>
+<% } else { %>
+<h2>Hello, <%= user.username %>.</h2>
+<% } %>
+
+<% if(result) { %>
+
+<ul>
+<% for(var i=0; i < result.length; i++) {%>
+    <li><%= result[i].user.screen_name %> : <%= result[i].text %></li>
+<% } %>
+</ul>
+<% } %>

@@ -1,0 +1,26 @@
+{
+  "name": "kjunichi",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^3.21.2",
+    "express-partials": "^0.3.0",
+    "hogan.js": "^2.0.0",
+    "oauth": "^0.9.15",
+    "passport": "^0.2.2",
+    "passport-twitter": "^1.0.4",
+    "qs": "^0.6.6"
+  },
+  "description": "test twitter search client",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@kjunichi",
+  "license": "MIT",
+  "engines": {
+    "node": "8.x"
+  }
+}

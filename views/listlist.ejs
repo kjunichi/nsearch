@@ -1,0 +1,21 @@
+<div class="navbar">
+    <div class="navbar-inner">
+    <a class="brand" href="#">PrTwSearch</a>
+    <ul class="nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/account">Account</a></li>
+    <li><a href="/search">Search</a></li>
+    <li class="active"><a href="/listlist">List/list</a></li>
+    <li><a href="/list">List/status</a></li>
+    <li><a href="logout">Log Out</a></li>
+    </ul>
+    </div>
+    </div>
+    
+<p>ID: <%= user.id %></p>
+
+<ul>
+<% for(var i=0; i < result.length; i++) {%>
+   <li><%= result[i].id_str %> : <%= result[i].name %> | <%= result[i].slug %> </li>
+<% } %>
+</ul>
